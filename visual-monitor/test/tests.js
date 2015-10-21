@@ -61,6 +61,7 @@ describe('Visual monitor testing', function() {
   it('should show the home page',function(done) {
     client
       .url(baseUrl)
+      .pause(2000)
       .webdrivercss(testName + '.homepage', {
         name: '1',
         exclude:
@@ -68,7 +69,6 @@ describe('Visual monitor testing', function() {
             // carousels
             '.slides',
           ],
-        hide: [],
         screenWidth: selectedCaps == 'chrome' ? [960] : undefined,
       }, resultsCallback)
       .call(done);
